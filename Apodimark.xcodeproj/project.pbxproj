@@ -119,7 +119,7 @@
 		CD1CCFE31DA68D1700D3AEAF /* Apodimark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Apodimark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1CD0121DA68DBD00D3AEAF /* Apodimark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Apodimark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1CD0321DA68F5600D3AEAF /* Apodimark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Apodimark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD1CD05A1DA693E100D3AEAF /* PerformanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerformanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1CD05A1DA693E100D3AEAF /* PerformanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = PerformanceTests.xctest; path = "Apodimark-PerformanceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1CD0661DA6961300D3AEAF /* Apodimark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Apodimark.swift; path = Apodimark/Apodimark.swift; sourceTree = "<group>"; };
 		CD1CD0701DA6961300D3AEAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Apodimark/Info.plist; sourceTree = "<group>"; };
 		CD1CD07C1DA6961300D3AEAF /* MarkdownParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkdownParser.swift; path = Apodimark/MarkdownParser.swift; sourceTree = "<group>"; };
@@ -808,6 +808,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = land.loic.Apodimark.macOS;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -828,6 +829,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = land.loic.Apodimark.macOS;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
