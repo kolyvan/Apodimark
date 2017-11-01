@@ -175,8 +175,7 @@ public enum ListBlockKind {
 
  - returns: an array of MarkdownBlock defining the markdown document
  */
-@_specialize(String.UTF16View, DefaultReferenceDefinitionStore, UTF16MarkdownCodec)
-@_specialize(Array<UInt8>, DefaultReferenceDefinitionStore, UTF8MarkdownCodec)
+@_specialize(where View == String.UTF16View, DefinitionStore == DefaultReferenceDefinitionStore, Codec == UTF16MarkdownCodec)
 public func parsedMarkdown <View, DefinitionStore, Codec> (source: View, definitionStore: DefinitionStore, codec: Codec.Type) -> [MarkdownBlock<View, DefinitionStore.Definition>] where
     View: BidirectionalCollection,
     DefinitionStore: ReferenceDefinitionStore,
