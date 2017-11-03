@@ -40,41 +40,8 @@ struct TextInlineNodeIterator <View: BidirectionalCollection, Codec: MarkdownPar
     
         let indices = text[i]
         guard !indices.isEmpty else { return nil }
-        
-        let (linebreak, end) = { () -> (Break, View.Index) in
-            var nbrOfSpaces = 0
-            var end = indices.upperBound
-            guard end > indices.lowerBound else {
-                return (.softbreak, end)
-            }
-            self.view.formIndex(before: &end)
-            switch self.view[end] {
-            case Codec.space:
-                nbrOfSpaces += 1
-                while end > indices.lowerBound {
-                    self.view.formIndex(before: &end)
-                    if self.view[end] == Codec.space {
-                        nbrOfSpaces += 1
-                    } else {
-                        return (nbrOfSpaces < 2 ? .softbreak : .spacesHardbreak, view.index(after: end))
-                    }
-                }
-                return (.softbreak, end)
-            
-            case Codec.backslash:
-                return (.backslashHardbreak, end)
-            default:
-                return (.softbreak, view.index(after: end))
-            }
-        }()
-        
-        if i == text.endIndex-1 {
-            let adjustedEnd = linebreak == .backslashHardbreak ? view.index(after: end) : end
-            return TextInlineNode(kind: .text, start: indices.lowerBound, end: adjustedEnd)
-        } else {
-            queuedTextInline = TextInlineNode(kind: linebreak == .softbreak ? .softbreak : .hardbreak, start: end, end: indices.upperBound)
-            return TextInlineNode(kind: .text, start: indices.lowerBound, end: end)
-        }
+
+        return TextInlineNode(kind: .text, start: indices.lowerBound, end: indices.upperBound)
     }
 }
 
