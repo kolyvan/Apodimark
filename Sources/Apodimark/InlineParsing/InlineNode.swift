@@ -22,7 +22,7 @@ enum InlineNode <View: BidirectionalCollection, RefDef: ReferenceDefinitionProto
 enum NonTextInlineNodeKind <View: BidirectionalCollection, RefDef: ReferenceDefinitionProtocol> {
     indirect case reference(ReferenceKind, title: Range<View.Index>, definition: RefDef)
     case code(Int32)
-    case emphasis(Int32)
+    case emphasis(Int32, EmphasisType)
     case escapingBackslash
 }
 
@@ -51,7 +51,7 @@ struct NonTextInlineNode <View: BidirectionalCollection, RefDef: ReferenceDefini
             return title
         case .code(let l):
             return view.index(start, offsetBy: numericCast(l)) ..< view.index(end, offsetBy: numericCast(-l))
-        case .emphasis(let l):
+        case let .emphasis(l, t):
             return view.index(start, offsetBy: numericCast(l)) ..< view.index(end, offsetBy: numericCast(-l))
         case .escapingBackslash:
             return start ..< start

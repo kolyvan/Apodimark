@@ -65,7 +65,7 @@ extension MarkdownParser {
             delimiters[openingDelIdx] = nil
             delimiters[closingDelIdx] = nil
             nodes.append(.init(
-                kind: .emphasis(l1),
+                kind: .emphasis(l1, .bold /*XXX*/),
                 start: view.index(openingDel.idx, offsetBy: numericCast(-l1)),
                 end: closingDel.idx
             ))
@@ -78,7 +78,7 @@ extension MarkdownParser {
             let endOffset = -(l2 - l1)
             
             nodes.append(.init(
-                kind: .emphasis(l1),
+                kind: .emphasis(l1, .bold /*XXX*/),
                 start: view.index(openingDel.idx, offsetBy: numericCast(startOffset)),
                 end: view.index(closingDel.idx, offsetBy: numericCast(endOffset))
             ))
@@ -91,7 +91,7 @@ extension MarkdownParser {
             delimiters[openingDelIdx]!.kind = .emph(kind, state1, l1 - l2)
             
             nodes.append(.init(
-                kind: .emphasis(l2),
+                kind: .emphasis(l2, .bold/*XXX*/),
                 start: view.index(openingDel.idx, offsetBy: numericCast(-l2)),
                 end: closingDel.idx
             ))
