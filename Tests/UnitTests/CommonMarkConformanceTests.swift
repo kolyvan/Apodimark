@@ -1,5 +1,7 @@
 
-import XCTest
+import Nimble
+import Quick
+
 import Apodimark
 
 private let tests = [
@@ -74,56 +76,72 @@ private func stringForTest(number: Int, result: Bool = false) -> String {
     return try! String(contentsOf: fileUrl)
 }
 
-class CommonMarkConformanceTests : XCTestCase {
+class CommonMarkConformanceTests : QuickSpec {
+    override func spec() {
+        // NB: We create individual tests for each fixture here as the "main"
+        // test suite and make the rest as asserts under a single test, so that
+        // the Xcode test list is a bit more manageable
+        describe("testSpecStringUTF16View") {
+            for no in tests {
+                let source = stringForTest(number: no).utf16
+                let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: UTF16MarkdownCodec.self)
+                let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UTF16MarkdownCodec.self)
+                let result = stringForTest(number: no, result: true)
+                it("Verifies test \(no)") { expect(result).to(equal(desc)) }
+            }
+        };
 
-    func testSpecStringUTF16View() {
-        for no in tests {
-            let source = stringForTest(number: no).utf16
-            let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: UTF16MarkdownCodec.self)
-            let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UTF16MarkdownCodec.self)
-            let result = stringForTest(number: no, result: true)
-            XCTAssertEqual(desc, result, "\(no)")
+        describe("testSpecStringUnicodeScalarView") {
+            it("runs conformance tests") {
+                for no in tests {
+                    let source = stringForTest(number: no).unicodeScalars
+                    let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: UnicodeScalarMarkdownCodec.self)
+                    let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UnicodeScalarMarkdownCodec.self)
+                    let result = stringForTest(number: no, result: true)
+                    expect(result).to(equal(desc))
+                }
+            }
         }
-    }
-    
-    func testSpecStringUnicodeScalarView() {
-        for no in tests {
-            let source = stringForTest(number: no).unicodeScalars
-            let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: UnicodeScalarMarkdownCodec.self)
-            let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UnicodeScalarMarkdownCodec.self)
-            let result = stringForTest(number: no, result: true)
-            XCTAssertEqual(desc, result, "\(no)")
-        }
-    }
-    
-    func testSpecStringCharacterView() {
-        for no in tests {
-            let source = stringForTest(number: no).characters
-            let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: CharacterMarkdownCodec.self)
-            let desc = MarkdownBlock.output(nodes: doc, source: source, codec: CharacterMarkdownCodec.self)
-            let result = stringForTest(number: no, result: true)
-            XCTAssertEqual(desc, result, "\(no)")
-        }
-    }
 
-    func testSpecArrayUInt32() {
-        for no in tests {
-            let source = Array(stringForTest(number: no).unicodeScalars).map { $0.value }
-            let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: UTF32MarkdownCodec.self)
-            let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UTF32MarkdownCodec.self)
-            let result = stringForTest(number: no, result: true)
-            XCTAssertEqual(desc, result, "\(no)")
+        describe("testSpecStringCharacterView") {
+            it("runs conformance tests") {
+                for no in tests {
+                    let source = stringForTest(number: no).characters
+                    let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: CharacterMarkdownCodec.self)
+                    let desc = MarkdownBlock.output(nodes: doc, source: source, codec: CharacterMarkdownCodec.self)
+                    let result = stringForTest(number: no, result: true)
+
+                    expect(result).to(equal(desc))
+                }
+            }
         }
-    }
-    
-    func testSpecUnsafeBufferPointerUInt8() {
-        for no in tests {
-            let arr = Array(stringForTest(number: no).utf8)
-            let source = arr.withUnsafeBufferPointer { $0 }
-            let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: UTF8MarkdownCodec.self)
-            let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UTF8MarkdownCodec.self)
-            let result = stringForTest(number: no, result: true)
-            XCTAssertEqual(desc, result, "\(no)")
+
+        describe("testSpecArrayUInt32") {
+            it("runs conformance tests") {
+                for no in tests {
+                    let source = Array(stringForTest(number: no).unicodeScalars).map { $0.value }
+                    let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: UTF32MarkdownCodec.self)
+                    let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UTF32MarkdownCodec.self)
+                    let result = stringForTest(number: no, result: true)
+
+                    expect(result).to(equal(desc))
+                }
+            }
+        }
+
+        describe("testSpecUnsafeBufferPointerUInt8") {
+            it("runs conformance tests") {
+                for no in tests {
+                    let arr = Array(stringForTest(number: no).utf8)
+                    let source = arr.withUnsafeBufferPointer { $0 }
+                    let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: UTF8MarkdownCodec.self)
+                    let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UTF8MarkdownCodec.self)
+                    let result = stringForTest(number: no, result: true)
+
+                    expect(result).to(equal(desc))
+                }
+            }
+
         }
     }
 }
