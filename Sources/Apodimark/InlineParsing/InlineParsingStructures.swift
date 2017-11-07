@@ -27,7 +27,7 @@ enum DelimiterKind {
 
 /// Returns true iff a token between `prev` and `next` is considered "left-flanking"
 private func leftFlanking(prev: TokenKind, next: TokenKind) -> Bool {
-    return next != .whitespace && (next != .punctuation || prev != .neither)
+    return (next != .punctuation || prev != .neither)
 }
 
 /// Returns true iff a token between `prev` and `next` is considered "right-flanking"
