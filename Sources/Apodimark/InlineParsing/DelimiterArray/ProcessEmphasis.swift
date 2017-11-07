@@ -12,13 +12,13 @@ extension MarkdownParser {
             start = newStart
         }
     }
-    
+
     /// Parse the first emphasis contained in `delimiters[indices]` and append it to `nodes`
     /// - returns: the index of the first opening emphasis delimiter in the `delimiters[indices]`, or `nil` if no emphasis was found
     fileprivate func processEmphasis(_ delimiters: inout [Delimiter?], indices: CountableRange<Int>, appendingTo nodes: inout [NonTextInline]) -> Int? {
         
-        guard let (newStart, openingDelIdx, closingDelIdx) = {
-            () -> (Int, Int, Int)? in
+        guard let (newStart, openingDelIdx, closingDelIdx, emphasisKind) = {
+            () -> (Int, Int, Int, EmphasisKind)? in
             
             var openingEmph: (underscore: Int?, asterisk: Int?) = (nil, nil)
             
@@ -29,7 +29,7 @@ extension MarkdownParser {
                     continue
                 }
                 if state.contains(.closing), let fstDelIdx = (kind == .underscore ? openingEmph.underscore : openingEmph.asterisk) {
-                    return (firstOpeningEmph!, fstDelIdx, i)
+                    return (firstOpeningEmph!, fstDelIdx, i, kind)
                 }
                 if state.contains(.opening) {
                     if firstOpeningEmph == nil { firstOpeningEmph = i }
@@ -58,6 +58,13 @@ extension MarkdownParser {
                 }
             }
         }
+
+        let emphType: EmphasisType = {
+            switch emphasisKind {
+            case .asterisk: return EmphasisType.bold
+            case .underscore: return EmphasisType.italic
+            }
+        }()
         
         switch Int32.compare(l1, l2) {
             
@@ -65,7 +72,7 @@ extension MarkdownParser {
             delimiters[openingDelIdx] = nil
             delimiters[closingDelIdx] = nil
             nodes.append(.init(
-                kind: .emphasis(l1, .bold /*XXX*/),
+                kind: .emphasis(l1, emphType),
                 start: view.index(openingDel.idx, offsetBy: numericCast(-l1)),
                 end: closingDel.idx
             ))
@@ -78,7 +85,7 @@ extension MarkdownParser {
             let endOffset = -(l2 - l1)
             
             nodes.append(.init(
-                kind: .emphasis(l1, .bold /*XXX*/),
+                kind: .emphasis(l1, emphType),
                 start: view.index(openingDel.idx, offsetBy: numericCast(startOffset)),
                 end: view.index(closingDel.idx, offsetBy: numericCast(endOffset))
             ))
@@ -91,7 +98,7 @@ extension MarkdownParser {
             delimiters[openingDelIdx]!.kind = .emph(kind, state1, l1 - l2)
             
             nodes.append(.init(
-                kind: .emphasis(l2, .bold/*XXX*/),
+                kind: .emphasis(l2, emphType),
                 start: view.index(openingDel.idx, offsetBy: numericCast(-l2)),
                 end: closingDel.idx
             ))
