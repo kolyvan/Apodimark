@@ -92,6 +92,14 @@
 		CD9444C01DAA8443007ADE47 /* BlockAST.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9444BE1DAA8443007ADE47 /* BlockAST.swift */; };
 		CD9444C11DAA8443007ADE47 /* BlockAST.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9444BE1DAA8443007ADE47 /* BlockAST.swift */; };
 		CD9444C21DAA8443007ADE47 /* BlockAST.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9444BE1DAA8443007ADE47 /* BlockAST.swift */; };
+		DAB9D3341FB263E90017FC2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB9D3301FB25FBF0017FC2A /* Nimble.framework */; };
+		DAB9D3351FB263E90017FC2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB9D3311FB25FBF0017FC2A /* Quick.framework */; };
+		DAB9D3391FB263FD0017FC2A /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAB9D3371FB263FD0017FC2A /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DAB9D33A1FB263FD0017FC2A /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAB9D3381FB263FD0017FC2A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DAB9D33B1FB264040017FC2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB9D3371FB263FD0017FC2A /* Nimble.framework */; };
+		DAB9D33C1FB264040017FC2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB9D3381FB263FD0017FC2A /* Quick.framework */; };
+		DAB9D3401FB2640F0017FC2A /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAB9D33E1FB2640F0017FC2A /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DAB9D3411FB2640F0017FC2A /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAB9D33F1FB2640F0017FC2A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +119,40 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DAB9D32F1FB25FB20017FC2A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAB9D3361FB263F40017FC2A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DAB9D3391FB263FD0017FC2A /* Nimble.framework in CopyFiles */,
+				DAB9D33A1FB263FD0017FC2A /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAB9D33D1FB264070017FC2A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DAB9D3401FB2640F0017FC2A /* Nimble.framework in CopyFiles */,
+				DAB9D3411FB2640F0017FC2A /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CD048D5D1DB27FF8006D4C1D /* InlineAST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineAST.swift; sourceTree = "<group>"; };
 		CD04A83D1DBEC0C700EB1925 /* ProcessEscapingBackslashes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessEscapingBackslashes.swift; sourceTree = "<group>"; };
@@ -119,7 +161,7 @@
 		CD1CCFE31DA68D1700D3AEAF /* Apodimark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Apodimark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1CD0121DA68DBD00D3AEAF /* Apodimark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Apodimark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1CD0321DA68F5600D3AEAF /* Apodimark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Apodimark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD1CD05A1DA693E100D3AEAF /* PerformanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = PerformanceTests.xctest; path = "Apodimark-PerformanceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1CD05A1DA693E100D3AEAF /* Apodimark-PerformanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Apodimark-PerformanceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1CD0661DA6961300D3AEAF /* Apodimark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Apodimark.swift; path = Apodimark/Apodimark.swift; sourceTree = "<group>"; };
 		CD1CD0701DA6961300D3AEAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Apodimark/Info.plist; sourceTree = "<group>"; };
 		CD1CD07C1DA6961300D3AEAF /* MarkdownParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkdownParser.swift; path = Apodimark/MarkdownParser.swift; sourceTree = "<group>"; };
@@ -143,6 +185,14 @@
 		CD9444AF1DA96565007ADE47 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		CD9444B91DAA4D99007ADE47 /* BlockParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockParsing.swift; sourceTree = "<group>"; };
 		CD9444BE1DAA8443007ADE47 /* BlockAST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockAST.swift; sourceTree = "<group>"; };
+		DAB9D32B1FB25FAB0017FC2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		DAB9D32C1FB25FAB0017FC2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		DAB9D3301FB25FBF0017FC2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		DAB9D3311FB25FBF0017FC2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		DAB9D3371FB263FD0017FC2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		DAB9D3381FB263FD0017FC2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		DAB9D33E1FB2640F0017FC2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		DAB9D33F1FB2640F0017FC2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +208,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD1CCFA21DA68BCB00D3AEAF /* Apodimark.framework in Frameworks */,
+				DAB9D3341FB263E90017FC2A /* Nimble.framework in Frameworks */,
+				DAB9D3351FB263E90017FC2A /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +239,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD1CD05F1DA693E100D3AEAF /* Apodimark.framework in Frameworks */,
+				DAB9D33B1FB264040017FC2A /* Nimble.framework in Frameworks */,
+				DAB9D33C1FB264040017FC2A /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,10 +250,17 @@
 		CD1CCF8E1DA68BCA00D3AEAF = {
 			isa = PBXGroup;
 			children = (
+				DAB9D3301FB25FBF0017FC2A /* Nimble.framework */,
+				DAB9D3311FB25FBF0017FC2A /* Quick.framework */,
+				DAB9D3371FB263FD0017FC2A /* Nimble.framework */,
+				DAB9D3381FB263FD0017FC2A /* Quick.framework */,
+				DAB9D33E1FB2640F0017FC2A /* Nimble.framework */,
+				DAB9D33F1FB2640F0017FC2A /* Quick.framework */,
 				CD1CCF9A1DA68BCB00D3AEAF /* Apodimark */,
 				CD1CCFA51DA68BCB00D3AEAF /* UnitTests */,
 				CD1CD05B1DA693E100D3AEAF /* PerformanceTests */,
 				CD1CCF991DA68BCB00D3AEAF /* Products */,
+				DAB9D32A1FB25FAB0017FC2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,7 +272,7 @@
 				CD1CCFE31DA68D1700D3AEAF /* Apodimark.framework */,
 				CD1CD0121DA68DBD00D3AEAF /* Apodimark.framework */,
 				CD1CD0321DA68F5600D3AEAF /* Apodimark.framework */,
-				CD1CD05A1DA693E100D3AEAF /* PerformanceTests.xctest */,
+				CD1CD05A1DA693E100D3AEAF /* Apodimark-PerformanceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -299,6 +360,15 @@
 			path = DelimiterArray;
 			sourceTree = "<group>";
 		};
+		DAB9D32A1FB25FAB0017FC2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAB9D32B1FB25FAB0017FC2A /* Nimble.framework */,
+				DAB9D32C1FB25FAB0017FC2A /* Quick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -341,6 +411,7 @@
 				CD1CCF941DA68BCB00D3AEAF /* Frameworks */,
 				CD1CCF951DA68BCB00D3AEAF /* Headers */,
 				CD1CCF961DA68BCB00D3AEAF /* Resources */,
+				DAB9D32F1FB25FB20017FC2A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -358,6 +429,7 @@
 				CD1CCF9D1DA68BCB00D3AEAF /* Sources */,
 				CD1CCF9E1DA68BCB00D3AEAF /* Frameworks */,
 				CD1CCF9F1DA68BCB00D3AEAF /* Resources */,
+				DAB9D3361FB263F40017FC2A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -430,6 +502,7 @@
 				CD1CD0561DA693E100D3AEAF /* Sources */,
 				CD1CD0571DA693E100D3AEAF /* Frameworks */,
 				CD1CD0581DA693E100D3AEAF /* Resources */,
+				DAB9D33D1FB264070017FC2A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -438,7 +511,7 @@
 			);
 			name = "Apodimark-PerformanceTests";
 			productName = PerformanceTests;
-			productReference = CD1CD05A1DA693E100D3AEAF /* PerformanceTests.xctest */;
+			productReference = CD1CD05A1DA693E100D3AEAF /* Apodimark-PerformanceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -802,6 +875,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Sources/Apodimark/info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -823,6 +900,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Sources/Apodimark/info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -840,6 +921,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Tests/UnitTests/info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = land.loic.ApodimarkTests;
@@ -854,6 +939,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Tests/UnitTests/info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = land.loic.ApodimarkTests;
@@ -994,6 +1083,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Tests/PerformanceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = land.loic.PerformanceTests;
@@ -1007,6 +1100,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Tests/PerformanceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = land.loic.PerformanceTests;
