@@ -73,7 +73,11 @@ private let tests = [
 private func stringForTest(number: Int, result: Bool = false) -> String {
     let dirUrl = URL(fileURLWithPath: #file).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
     let fileUrl = dirUrl.appendingPathComponent("test-files/commonmark-conformance/\(number)" + (result ? "-result" : "") + ".txt")
-    return try! String(contentsOf: fileUrl)
+    var string = try! String(contentsOf: fileUrl)
+    if result {
+      string = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    }
+    return string
 }
 
 class CommonMarkConformanceTests : QuickSpec {
@@ -87,7 +91,7 @@ class CommonMarkConformanceTests : QuickSpec {
                 let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: UTF16MarkdownCodec.self)
                 let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UTF16MarkdownCodec.self)
                 let result = stringForTest(number: no, result: true)
-                it("Verifies test \(no)") { expect(result).to(equal(desc)) }
+                it("Verifies test \(no)") { expect(desc).to(equal(result)) }
             }
         };
 
@@ -98,7 +102,7 @@ class CommonMarkConformanceTests : QuickSpec {
                     let doc = parsedMarkdown(source: source, definitionStore: DefaultReferenceDefinitionStore(), codec: UnicodeScalarMarkdownCodec.self)
                     let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UnicodeScalarMarkdownCodec.self)
                     let result = stringForTest(number: no, result: true)
-                    expect(result).to(equal(desc))
+                    expect(desc).to(equal(result))
                 }
             }
         }
@@ -111,7 +115,7 @@ class CommonMarkConformanceTests : QuickSpec {
                     let desc = MarkdownBlock.output(nodes: doc, source: source, codec: CharacterMarkdownCodec.self)
                     let result = stringForTest(number: no, result: true)
 
-                    expect(result).to(equal(desc))
+                    expect(desc).to(equal(result))
                 }
             }
         }
@@ -124,7 +128,7 @@ class CommonMarkConformanceTests : QuickSpec {
                     let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UTF32MarkdownCodec.self)
                     let result = stringForTest(number: no, result: true)
 
-                    expect(result).to(equal(desc))
+                    expect(desc).to(equal(result))
                 }
             }
         }
@@ -138,7 +142,7 @@ class CommonMarkConformanceTests : QuickSpec {
                     let desc = MarkdownBlock.output(nodes: doc, source: source, codec: UTF8MarkdownCodec.self)
                     let result = stringForTest(number: no, result: true)
 
-                    expect(result).to(equal(desc))
+                    expect(desc).to(equal(result))
                 }
             }
 
