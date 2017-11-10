@@ -58,6 +58,13 @@ extension String: ReferenceDefinitionProtocol {
     public init(string: String) { self = string }
 }
 
+public enum EmphasisType {
+    case bold
+    case italic
+    case underline
+    case strikethrough
+}
+
 public struct ParagraphBlock <View: BidirectionalCollection, RefDef> {
     public let text: [MarkdownInline<View, RefDef>]
 }
@@ -119,6 +126,7 @@ public struct ReferenceInline <View: BidirectionalCollection, RefDef> {
 
 public struct EmphasisInline <View: BidirectionalCollection, RefDef> {
     public let level: Int
+    public let type: EmphasisType
     public let content: [MarkdownInline<View, RefDef>]
     public let markers: (Range<View.Index>, Range<View.Index>)
 }
@@ -299,12 +307,13 @@ extension MarkdownParser {
                     )
                     nodes.append(.monospacedText(inline))
                     
-                case .emphasis(let level):
+                case let .emphasis(level, type):
                     let startMarkers = n.start ..< view.index(n.start, offsetBy: numericCast(level))
                     let endMarkers = view.index(n.end, offsetBy: numericCast(-level)) ..< n.end
                     
                     let inline = EmphasisInline(
                         level: numericCast(level),
+                        type: type,
                         content: children.map(makeFinalInlineNodeTree) ?? [],
                         markers: (startMarkers, endMarkers)
                     )
