@@ -20,7 +20,7 @@ extension MarkdownParser {
         guard let (newStart, openingDelIdx, closingDelIdx, emphasisKind) = {
             () -> (Int, Int, Int, EmphasisKind)? in
             
-            var openingEmph: (underscore: Int?, asterisk: Int?) = (nil, nil)
+            var openingEmph: (underscore: Int?, asterisk: Int?, tilde: Int?) = (nil, nil, nil)
             
             var firstOpeningEmph: Int? = nil
             
@@ -28,12 +28,16 @@ extension MarkdownParser {
                 guard case let .emph(kind, state, level)? = delimiters[i]?.kind else {
                     continue
                 }
-                if state.contains(.closing), let fstDelIdx = (kind == .underscore ? openingEmph.underscore : openingEmph.asterisk) {
-                    return (firstOpeningEmph!, fstDelIdx, i, kind)
+                if state.contains(.closing) {
+                    let fstDelIdx: Int? = (kind == .underscore ? openingEmph.underscore :
+                            kind == .asterisk ? openingEmph.asterisk : openingEmph.tilde)
+
+                    if fstDelIdx != nil { return (firstOpeningEmph!, fstDelIdx!, i, kind) }
                 }
                 if state.contains(.opening) {
                     if firstOpeningEmph == nil { firstOpeningEmph = i }
                     if kind == .underscore { openingEmph.underscore = i }
+                    else if kind == .tilde { openingEmph.tilde = i }
                     else { openingEmph.asterisk = i }
                 }
             }
@@ -63,6 +67,7 @@ extension MarkdownParser {
             switch emphasisKind {
             case .asterisk: return EmphasisType.bold
             case .underscore: return EmphasisType.italic
+            case .tilde: return EmphasisType.strikethrough
             }
         }()
         
