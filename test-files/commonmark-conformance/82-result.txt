@@ -1,1 +1,1 @@
-Document { Code[foo], }
+Document { Paragraph(), Code[foo], }
