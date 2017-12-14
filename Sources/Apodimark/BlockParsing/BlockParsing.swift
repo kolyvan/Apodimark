@@ -71,7 +71,7 @@ extension MarkdownParser {
         
         let addResult = last.map{ add(line: line, to: $0, depthLevel: .root) } ?? .failure
         
-        if case .failure = addResult, !line.kind.isEmpty() {
+        if case .failure = addResult {
             _ = appendStrand(from: line, level: .root)
         }
     }
