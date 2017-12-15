@@ -67,6 +67,7 @@ public enum EmphasisType {
 
 public struct ParagraphBlock <View: BidirectionalCollection, RefDef> {
     public let text: [MarkdownInline<View, RefDef>]
+    public let indent: Int
 }
 
 public struct HeaderBlock <View: BidirectionalCollection, RefDef> {
@@ -211,7 +212,7 @@ extension MarkdownParser {
             
         case let .paragraph(p):
             let inlines = makeFinalInlineNodeTree(from: parseInlines(p.text).makeBreadthFirstIterator())
-            let block = ParagraphBlock(text: inlines)
+            let block = ParagraphBlock(text: inlines, indent: p.indent)
             return .paragraph(block)
             
             

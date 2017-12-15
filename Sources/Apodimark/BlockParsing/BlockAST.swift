@@ -12,10 +12,12 @@ enum BlockNode <View: BidirectionalCollection, RefDef: ReferenceDefinitionProtoc
 }
 
 final class ParagraphNode <View: BidirectionalCollection> {
+    var indent: Int
     var text: [Range<View.Index>]
     var closed: Bool
-    init(text: [Range<View.Index>]) {
+    init(text: [Range<View.Index>], indent: Int) {
         (self.text, self.closed) = (text, false)
+        self.indent = indent
     }
 }
 

@@ -273,7 +273,7 @@ extension MarkdownParser {
             appendStrand(line: rest, previousEnd: previousEnd)
             
         case .text:
-            append(.paragraph(.init(text: [line.indices])))
+            append(.paragraph(.init(text: [line.indices], indent: line.indent.level)))
             
         case .header(let text, let level):
             let startHashes = line.indices.lowerBound ..< view.index(line.indices.lowerBound, offsetBy: numericCast(level))
@@ -315,7 +315,7 @@ extension MarkdownParser {
             append(.thematicBreak(.init(span: line.indices)))
             
         case .empty:
-            append(.paragraph(.init(text: [])))
+            append(.paragraph(.init(text: [], indent: line.indent.level)))
             
         case let .reference(title, definition):
             append(.referenceDefinition(.init(title: title, definition: definition)))

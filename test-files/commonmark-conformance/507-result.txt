@@ -1,1 +1,1 @@
-Document { Paragraph([ref: bar(/url1)]), }
+Document { Paragraph([ref: foo(/url1)]: /url2), Paragraph([ref: bar(/url1)]), }
