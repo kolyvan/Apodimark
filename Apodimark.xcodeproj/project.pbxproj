@@ -92,13 +92,8 @@
 		CD9444C01DAA8443007ADE47 /* BlockAST.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9444BE1DAA8443007ADE47 /* BlockAST.swift */; };
 		CD9444C11DAA8443007ADE47 /* BlockAST.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9444BE1DAA8443007ADE47 /* BlockAST.swift */; };
 		CD9444C21DAA8443007ADE47 /* BlockAST.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9444BE1DAA8443007ADE47 /* BlockAST.swift */; };
-		DAB9D3341FB263E90017FC2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB9D3301FB25FBF0017FC2A /* Nimble.framework */; };
-		DAB9D3351FB263E90017FC2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB9D3311FB25FBF0017FC2A /* Quick.framework */; };
 		DAB9D3391FB263FD0017FC2A /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAB9D3371FB263FD0017FC2A /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DAB9D33A1FB263FD0017FC2A /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAB9D3381FB263FD0017FC2A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAB9D33B1FB264040017FC2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB9D3371FB263FD0017FC2A /* Nimble.framework */; };
-		DAB9D33C1FB264040017FC2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB9D3381FB263FD0017FC2A /* Quick.framework */; };
-		DAB9D3401FB2640F0017FC2A /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAB9D33E1FB2640F0017FC2A /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAB9D3411FB2640F0017FC2A /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAB9D33F1FB2640F0017FC2A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -136,7 +131,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				DAB9D3391FB263FD0017FC2A /* Nimble.framework in CopyFiles */,
-				DAB9D33A1FB263FD0017FC2A /* Quick.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +140,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DAB9D3401FB2640F0017FC2A /* Nimble.framework in CopyFiles */,
 				DAB9D3411FB2640F0017FC2A /* Quick.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,12 +180,8 @@
 		CD9444BE1DAA8443007ADE47 /* BlockAST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockAST.swift; sourceTree = "<group>"; };
 		DAB9D32B1FB25FAB0017FC2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		DAB9D32C1FB25FAB0017FC2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
-		DAB9D3301FB25FBF0017FC2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
-		DAB9D3311FB25FBF0017FC2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
-		DAB9D3371FB263FD0017FC2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
-		DAB9D3381FB263FD0017FC2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
-		DAB9D33E1FB2640F0017FC2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
-		DAB9D33F1FB2640F0017FC2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		DAB9D3371FB263FD0017FC2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		DAB9D33F1FB2640F0017FC2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,8 +197,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD1CCFA21DA68BCB00D3AEAF /* Apodimark.framework in Frameworks */,
-				DAB9D3341FB263E90017FC2A /* Nimble.framework in Frameworks */,
-				DAB9D3351FB263E90017FC2A /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +227,6 @@
 			files = (
 				CD1CD05F1DA693E100D3AEAF /* Apodimark.framework in Frameworks */,
 				DAB9D33B1FB264040017FC2A /* Nimble.framework in Frameworks */,
-				DAB9D33C1FB264040017FC2A /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,12 +236,6 @@
 		CD1CCF8E1DA68BCA00D3AEAF = {
 			isa = PBXGroup;
 			children = (
-				DAB9D3301FB25FBF0017FC2A /* Nimble.framework */,
-				DAB9D3311FB25FBF0017FC2A /* Quick.framework */,
-				DAB9D3371FB263FD0017FC2A /* Nimble.framework */,
-				DAB9D3381FB263FD0017FC2A /* Quick.framework */,
-				DAB9D33E1FB2640F0017FC2A /* Nimble.framework */,
-				DAB9D33F1FB2640F0017FC2A /* Quick.framework */,
 				CD1CCF9A1DA68BCB00D3AEAF /* Apodimark */,
 				CD1CCFA51DA68BCB00D3AEAF /* UnitTests */,
 				CD1CD05B1DA693E100D3AEAF /* PerformanceTests */,
@@ -295,6 +275,8 @@
 		CD1CCFA51DA68BCB00D3AEAF /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				DAB9D3371FB263FD0017FC2A /* Nimble.framework */,
+				DAB9D33F1FB2640F0017FC2A /* Quick.framework */,
 				CD1CD0CE1DA6968C00D3AEAF /* ApodimarkOutput.swift */,
 				CD1CD0CF1DA6968C00D3AEAF /* CommonMarkConformanceTests.swift */,
 				CD1CD0D01DA6968C00D3AEAF /* Info.plist */,
@@ -521,7 +503,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Loïc Lecrenier";
 				TargetAttributes = {
 					CD1CCF971DA68BCB00D3AEAF = {
@@ -536,7 +518,7 @@
 					};
 					CD1CCFE21DA68D1700D3AEAF = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 					CD1CD0111DA68DBD00D3AEAF = {
@@ -774,15 +756,24 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -827,15 +818,24 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -969,6 +969,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = land.loic.Apodimark.iOS;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -990,6 +992,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = land.loic.Apodimark.iOS;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
